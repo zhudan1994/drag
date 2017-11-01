@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>弹窗拖拽</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .drag {
+        position: absolute;
+        width: 200px;
+        border: 1px solid #000;
+        left: 0;
+        top: 0;
+    }
+
+    .drag-head,
+    .drag-content {
+        width: 100%;
+    }
+
+    .drag-head {
+        height: 40px;
+        background-color: #eee;
+        cursor: move;
+    }
+
+    .drag-content {
+        height: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="drag" id="drag">
+        <div class="drag-head" id="head">头部</div>
+        <div class="drag-content">
+            内容区
+        </div>
+    </div>
+    <script src="drag.js"></script>
+    <script type="text/javascript">
+    var dom = document.getElementById('drag'),
+        head = document.getElementById('head');
+    var d = new Drag(head, dom);
+    d.drag(function(x,y) {
+    	// console.log(x, y)
+    })
+    </script>
+</body>
+
+</html>
